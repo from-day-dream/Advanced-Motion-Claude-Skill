@@ -1,0 +1,138 @@
+{
+  "name": "grid-board",
+  "description": "Editorial grid lines draw on; images pop in at the cells and drift in depth around a central line.",
+  "reference": "Visual Board",
+  "rig": {
+    "type": "grid",
+    "cols": 3,
+    "rows": 3,
+    "gap": 0.3,
+    "slots": [
+      0,
+      2,
+      6,
+      8,
+      1,
+      7,
+      3,
+      5
+    ],
+    "zAmp": 0.12,
+    "lines": true
+  },
+  "ranges": {
+    "rig.gap": [
+      0.15,
+      0.5
+    ],
+    "rig.zAmp": [
+      0,
+      0.25
+    ]
+  },
+  "camera": {
+    "preset": "front",
+    "fit": 1.02,
+    "fov": 35
+  },
+  "look": {
+    "fog": 0.08,
+    "shading": 0.25,
+    "lineColor": "role:text"
+  },
+  "type": {
+    "roles": [
+      "front"
+    ],
+    "maxWords": 4,
+    "specimen": {
+      "layer": "front",
+      "zone": "center",
+      "size": "fit",
+      "maxSize": 150,
+      "text": "Board"
+    }
+  },
+  "cards": {
+    "count": [
+      4,
+      8
+    ],
+    "aspect": [
+      "4:5",
+      "3:4",
+      "1:1"
+    ]
+  },
+  "beats": [
+    {
+      "name": "lines",
+      "at": 0,
+      "dur": 0.22,
+      "to": "rig.draw",
+      "from": 0,
+      "value": 1,
+      "ease": "motion:move",
+      "skipOnLoop": true,
+      "why": "builds the editorial frame the images will land in"
+    },
+    {
+      "name": "pop",
+      "at": 0.1,
+      "dur": 0.32,
+      "to": "rig.pop",
+      "from": 0,
+      "value": "N",
+      "ease": "motion:enter",
+      "skipOnLoop": true,
+      "why": "reveals the images one by one, each at its cell"
+    },
+    {
+      "name": "drift",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.phase",
+      "from": 0,
+      "value": 1,
+      "ease": "linear",
+      "why": "keeps the frame alive: cards breathe in depth"
+    },
+    {
+      "name": "dolly-out",
+      "at": 0,
+      "dur": 0.5,
+      "to": "camera.dolly",
+      "from": 0,
+      "value": 0.05,
+      "ease": "motion:ambient",
+      "why": "keeps the frame alive: a slow push in and out"
+    },
+    {
+      "name": "dolly-back",
+      "at": 0.5,
+      "dur": 0.5,
+      "to": "camera.dolly",
+      "from": 0.05,
+      "value": 0,
+      "ease": "motion:ambient",
+      "why": "keeps the frame alive: a slow push in and out"
+    }
+  ],
+  "duration": {
+    "default": 8,
+    "range": [
+      6,
+      14
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "a moodboard",
+    "a collection with one message",
+    "an editorial announcement"
+  ],
+  "avoid": [
+    "more than 8 cards",
+    "no message line (the centre stays empty)"
+  ]
+}

@@ -1,0 +1,12 @@
+<!doctype html>
+<!-- Card skeleton: photo with a caption. The image path is relative to this file (cards/ → ../images/x.jpg).
+     A photo with no words needs no HTML: use { "image": "images/x.jpg", "aspect": "4:5" } in scene.json. -->
+<html><head><meta charset="utf-8">{{FONT_FACES}}{{TOKENS}}<style>
+body { background: BRAND_BACKGROUND; color: BRAND_TEXT; font-family: BRAND_FONT_BODY; padding: 56px; display: flex; flex-direction: column; gap: 40px; }
+.ph { flex: 1; border-radius: 28px; overflow: hidden; background: BRAND_SURFACE; }
+.ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cap { font-family: BRAND_FONT_DISPLAY; font-weight: BRAND_WEIGHT_DISPLAY; font-size: 64px; line-height: 1; letter-spacing: -.02em; padding: 0 16px 24px; }
+</style></head><body>
+  <div class="ph"><img src="../images/photo.jpg" alt=""></div>
+  <div class="cap">A caption in a few words</div>
+</body></html>

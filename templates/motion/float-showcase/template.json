@@ -1,0 +1,142 @@
+{
+  "name": "float-showcase",
+  "description": "Shallow-depth cards drift and turn; the camera creeps in and back.",
+  "reference": "Jitter \"Showcase 11\"",
+  "rig": {
+    "type": "scatter",
+    "spread": [
+      2.7,
+      4.6,
+      1.3
+    ],
+    "rotRange": [
+      10,
+      18,
+      12
+    ],
+    "drift": [
+      0.07,
+      0.09,
+      0.06
+    ],
+    "driftRot": 3,
+    "keepOut": 0.3
+  },
+  "ranges": {
+    "rig.spread.0": [
+      2,
+      3.4
+    ],
+    "rig.spread.1": [
+      3.2,
+      5.4
+    ],
+    "rig.keepOut": [
+      0,
+      0.5
+    ],
+    "cycles": [
+      1,
+      2
+    ]
+  },
+  "vars": {
+    "cycles": 1
+  },
+  "camera": {
+    "preset": "front",
+    "fit": 0.92,
+    "fov": 35
+  },
+  "look": {
+    "shadow": "soft",
+    "shadowStrength": 0.32,
+    "fog": 0.12,
+    "shading": 0.28
+  },
+  "type": {
+    "roles": [
+      "behind",
+      "front"
+    ],
+    "maxWords": 3,
+    "specimen": {
+      "layer": "behind",
+      "zone": "center",
+      "size": "fit",
+      "text": "Showcase"
+    }
+  },
+  "cards": {
+    "count": [
+      4,
+      7
+    ],
+    "aspect": [
+      "4:5",
+      "3:4",
+      "1:1"
+    ]
+  },
+  "beats": [
+    {
+      "name": "build-in",
+      "at": 0,
+      "dur": 0.14,
+      "to": "rig.build",
+      "from": 0,
+      "value": 1,
+      "ease": "motion:enter",
+      "skipOnLoop": true,
+      "why": "reveals the cards: they arrive in order before the motion takes over"
+    },
+    {
+      "name": "drift",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.phase",
+      "from": 0,
+      "value": "cycles",
+      "ease": "linear",
+      "why": "keeps the frame alive: each card drifts and turns on its own slow cycle"
+    },
+    {
+      "name": "dolly-out",
+      "at": 0,
+      "dur": 0.5,
+      "to": "camera.dolly",
+      "from": 0,
+      "value": 0.1,
+      "ease": "motion:ambient",
+      "why": "keeps the frame alive: the camera creeps in and settles back"
+    },
+    {
+      "name": "dolly-back",
+      "at": 0.5,
+      "dur": 0.5,
+      "to": "camera.dolly",
+      "from": 0.1,
+      "value": 0,
+      "ease": "motion:ambient",
+      "why": "keeps the frame alive: the camera creeps in and settles back"
+    }
+  ],
+  "duration": {
+    "default": 8,
+    "range": [
+      6,
+      15
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "product showcase",
+    "portfolio highlights",
+    "a few hero images",
+    "a big word with supporting visuals"
+  ],
+  "avoid": [
+    "more than 7 cards (they crowd)",
+    "cards that must be read (they tilt)"
+  ]
+}

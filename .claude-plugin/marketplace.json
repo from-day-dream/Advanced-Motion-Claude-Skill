@@ -1,0 +1,12 @@
+{
+  "name": "day-dream-studio-advanced-motion",
+  "description": "Claude Code plugins by day-dream.studio",
+  "owner": { "name": "day-dream.studio" },
+  "plugins": [
+    {
+      "name": "advanced-motion",
+      "source": "./",
+      "description": "Branded 3D card scenes (rings, stacks, ribbons, walls) from a carousel, deck or sources, rendered locally to MP4"
+    }
+  ]
+}

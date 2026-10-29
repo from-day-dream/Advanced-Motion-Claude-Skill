@@ -1,0 +1,103 @@
+{
+  "name": "vortex-trail",
+  "description": "Images stream out of a point, growing as they spiral toward the camera.",
+  "reference": "Cursor trail",
+  "rig": {
+    "type": "spine",
+    "mode": "spiral",
+    "turns": 2.2,
+    "r0": 0.05,
+    "r1": 2.6,
+    "z0": -9,
+    "z1": 3.2,
+    "scaleStart": 0.3,
+    "scaleEnd": 1.15,
+    "fadeEnds": 0.1,
+    "twist": 30
+  },
+  "ranges": {
+    "rig.turns": [
+      1.2,
+      3.5
+    ],
+    "cycles": [
+      1,
+      2
+    ]
+  },
+  "vars": {
+    "cycles": 1
+  },
+  "camera": {
+    "preset": "front",
+    "position": [
+      0,
+      0,
+      6.4
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ],
+    "fov": 48
+  },
+  "look": {
+    "fog": 0.6,
+    "shading": 0.25
+  },
+  "type": {
+    "roles": [
+      "interleaved",
+      "front"
+    ],
+    "maxWords": 2,
+    "specimen": {
+      "layer": "interleaved",
+      "zone": "center",
+      "size": "fit",
+      "maxSize": 190,
+      "depth": -1.5,
+      "text": "Vortex"
+    }
+  },
+  "cards": {
+    "count": [
+      20,
+      40
+    ],
+    "aspect": [
+      "4:5",
+      "1:1"
+    ]
+  },
+  "beats": [
+    {
+      "name": "stream",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.offset",
+      "from": 0,
+      "value": "cycles",
+      "ease": "linear",
+      "why": "carries the images out of the centre toward the viewer, in an endless stream"
+    }
+  ],
+  "duration": {
+    "default": 10,
+    "range": [
+      6,
+      15
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "an archive or a big set of work",
+    "energy, abundance",
+    "a reveal word at the centre"
+  ],
+  "avoid": [
+    "fewer than 20 cards",
+    "readable cards"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "name": "peel-stack",
+  "description": "A deck seen from below in strong perspective; the front card lifts away and the next is revealed.",
+  "reference": "Colour stack",
+  "rig": {
+    "type": "stack",
+    "mode": "peel",
+    "gap": 0.14,
+    "stepY": 0,
+    "depth": 6,
+    "lift": 2.8,
+    "liftRot": -42,
+    "idle": 0.012
+  },
+  "ranges": {
+    "rig.gap": [
+      0.08,
+      0.25
+    ],
+    "rig.depth": [
+      3,
+      10
+    ]
+  },
+  "camera": {
+    "preset": "below",
+    "fit": 0.72,
+    "fov": 40
+  },
+  "look": {
+    "shadow": "soft",
+    "shadowStrength": 0.25,
+    "fog": 0.25,
+    "shading": 0.3
+  },
+  "type": {
+    "roles": [
+      "none",
+      "front"
+    ],
+    "maxWords": 5,
+    "specimen": {
+      "layer": "front",
+      "zone": "bottom",
+      "size": 96,
+      "text": "Next up"
+    }
+  },
+  "cards": {
+    "count": [
+      6,
+      12
+    ],
+    "aspect": [
+      "4:5",
+      "3:4",
+      "1:1"
+    ]
+  },
+  "beats": [
+    {
+      "name": "build-in",
+      "at": 0,
+      "dur": 0.14,
+      "to": "rig.build",
+      "from": 0,
+      "value": 1,
+      "ease": "motion:enter",
+      "skipOnLoop": true,
+      "why": "reveals the cards: they arrive in order before the motion takes over"
+    },
+    {
+      "name": "peel",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.peel",
+      "from": 0,
+      "value": "N",
+      "steps": "N",
+      "fill": 0.55,
+      "ease": "motion:move",
+      "why": "reveals the next card: each lift uncovers what was beneath"
+    }
+  ],
+  "duration": {
+    "default": 10,
+    "range": [
+      6,
+      16
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "a colour or product range",
+    "a sequence revealed one by one",
+    "before/after or step reveals"
+  ],
+  "avoid": [
+    "fewer than 6 cards",
+    "more than one line of type"
+  ]
+}

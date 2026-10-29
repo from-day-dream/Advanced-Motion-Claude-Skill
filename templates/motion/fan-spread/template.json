@@ -1,0 +1,106 @@
+{
+  "name": "fan-spread",
+  "description": "Cards fan open from a pivot, settle, and breathe.",
+  "reference": "new",
+  "rig": {
+    "type": "arc",
+    "mode": "fan",
+    "spread": 62,
+    "pivot": 2.1,
+    "open": 0,
+    "idle": 0.015
+  },
+  "ranges": {
+    "rig.spread": [
+      30,
+      90
+    ],
+    "rig.pivot": [
+      1.2,
+      3
+    ]
+  },
+  "camera": {
+    "preset": "front",
+    "fit": 1.12,
+    "fov": 35
+  },
+  "look": {
+    "shadow": "soft",
+    "shadowStrength": 0.3,
+    "fog": 0.05,
+    "shading": 0.2
+  },
+  "type": {
+    "roles": [
+      "front"
+    ],
+    "maxWords": 5,
+    "specimen": {
+      "layer": "front",
+      "zone": "top",
+      "size": 96,
+      "text": "Pick one"
+    }
+  },
+  "cards": {
+    "count": [
+      3,
+      7
+    ],
+    "aspect": [
+      "4:5",
+      "3:4",
+      "2:3"
+    ]
+  },
+  "beats": [
+    {
+      "name": "open",
+      "at": 0.06,
+      "dur": 0.24,
+      "to": "rig.open",
+      "from": 0,
+      "value": 1,
+      "ease": "motion:enter",
+      "why": "fans the set open from one point so every card gets seen"
+    },
+    {
+      "name": "breathe-in",
+      "at": 0.4,
+      "dur": 0.3,
+      "to": "rig.open",
+      "from": 1,
+      "value": 0.9,
+      "ease": "motion:ambient",
+      "why": "keeps the frame alive: the fan breathes"
+    },
+    {
+      "name": "breathe-out",
+      "at": 0.7,
+      "dur": 0.3,
+      "to": "rig.open",
+      "from": 0.9,
+      "value": 1,
+      "ease": "motion:ambient",
+      "why": "keeps the frame alive: the fan breathes"
+    }
+  ],
+  "duration": {
+    "default": 6,
+    "range": [
+      4,
+      10
+    ]
+  },
+  "loop": false,
+  "fits": [
+    "a small set of options",
+    "a hand of cards",
+    "a quick reveal"
+  ],
+  "avoid": [
+    "more than 7 cards",
+    "loops"
+  ]
+}

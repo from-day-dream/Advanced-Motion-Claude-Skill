@@ -1,0 +1,100 @@
+{
+  "name": "orbit-sphere",
+  "description": "Cards on a sphere shell orbit the word, passing in front of it and behind.",
+  "reference": "Create",
+  "rig": {
+    "type": "sphere",
+    "face": "tangent",
+    "density": 1,
+    "pitch": 14,
+    "cardScale": 0.72
+  },
+  "ranges": {
+    "turns": [
+      1,
+      2
+    ],
+    "rig.pitch": [
+      -25,
+      25
+    ]
+  },
+  "vars": {
+    "turns": 1
+  },
+  "camera": {
+    "preset": "front",
+    "fit": 0.6,
+    "fov": 35
+  },
+  "look": {
+    "fog": 0.5,
+    "shading": 0.35,
+    "backShade": 0.4
+  },
+  "type": {
+    "roles": [
+      "interleaved",
+      "front"
+    ],
+    "maxWords": 2,
+    "specimen": {
+      "layer": "interleaved",
+      "zone": "center",
+      "size": "fit",
+      "maxSize": 200,
+      "depthR": 1,
+      "text": "Orbit"
+    }
+  },
+  "cards": {
+    "count": [
+      15,
+      30
+    ],
+    "aspect": [
+      "4:5",
+      "1:1"
+    ]
+  },
+  "beats": [
+    {
+      "name": "build-in",
+      "at": 0,
+      "dur": 0.14,
+      "to": "rig.build",
+      "from": 0,
+      "value": 1,
+      "ease": "motion:enter",
+      "skipOnLoop": true,
+      "why": "reveals the cards: they arrive in order before the motion takes over"
+    },
+    {
+      "name": "orbit",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.yaw",
+      "from": 0,
+      "value": "turns*360",
+      "ease": "linear",
+      "why": "orbits the cards around the word, passing in front of it and behind"
+    }
+  ],
+  "duration": {
+    "default": 12,
+    "range": [
+      8,
+      20
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "a community or many contributors",
+    "a big library behind one idea",
+    "a launch word"
+  ],
+  "avoid": [
+    "fewer than 15 cards (the shell has holes)",
+    "readable cards (they are small)"
+  ]
+}

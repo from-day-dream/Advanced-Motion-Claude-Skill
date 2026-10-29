@@ -1,0 +1,115 @@
+{
+  "name": "ribbon-feed",
+  "description": "Pages travel up an S-curve, banking as they turn, like scrolling a 3D feed.",
+  "reference": "Noteform deck",
+  "rig": {
+    "type": "spine",
+    "mode": "path",
+    "stretch": "N/6",
+    "bank": 26,
+    "fadeEnds": 0.12,
+    "scaleStart": 0.92,
+    "scaleEnd": 0.92
+  },
+  "ranges": {
+    "rig.bank": [
+      10,
+      40
+    ],
+    "cycles": [
+      1,
+      2
+    ]
+  },
+  "vars": {
+    "cycles": 1
+  },
+  "camera": {
+    "preset": "front",
+    "fit": 0.38,
+    "fov": 35,
+    "elevate": 4
+  },
+  "look": {
+    "fog": 0.3,
+    "shading": 0.3
+  },
+  "type": {
+    "roles": [
+      "none",
+      "front"
+    ],
+    "maxWords": 4,
+    "specimen": null
+  },
+  "cards": {
+    "count": [
+      5,
+      10
+    ],
+    "aspect": [
+      "4:5",
+      "3:4"
+    ]
+  },
+  "beats": [
+    {
+      "name": "build-in",
+      "at": 0,
+      "dur": 0.14,
+      "to": "rig.build",
+      "from": 0,
+      "value": 1,
+      "ease": "motion:enter",
+      "skipOnLoop": true,
+      "why": "reveals the cards: they arrive in order before the motion takes over"
+    },
+    {
+      "name": "travel",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.offset",
+      "from": 0,
+      "value": "cycles",
+      "ease": "linear",
+      "why": "carries the eye up the feed, page after page"
+    },
+    {
+      "name": "orbit-out",
+      "at": 0,
+      "dur": 0.5,
+      "to": "camera.orbit",
+      "from": 0,
+      "value": 6,
+      "ease": "motion:ambient",
+      "why": "keeps the frame alive: the view swings gently around the curve"
+    },
+    {
+      "name": "orbit-back",
+      "at": 0.5,
+      "dur": 0.5,
+      "to": "camera.orbit",
+      "from": 6,
+      "value": 0,
+      "ease": "motion:ambient",
+      "why": "keeps the frame alive: the view swings gently around the curve"
+    }
+  ],
+  "duration": {
+    "default": 10,
+    "range": [
+      6,
+      15
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "a deck or report walked through",
+    "a carousel shown as a feed",
+    "pages that should stay readable"
+  ],
+  "avoid": [
+    "fewer than 5 cards (gaps in the feed)",
+    "photos without text (use float-showcase)"
+  ]
+}

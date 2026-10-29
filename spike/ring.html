@@ -1,0 +1,61 @@
+<!doctype html>
+<!-- Phase 0 spike: N textured cards on a rotating ring, seeked frame by frame through the same
+     window.__scene = { tl } contract as Slide Motion. ?n=<cards>&tex=<px> pick the variant. -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>html,body{margin:0;background:#1d1d1f;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{ "imports": { "three": "/node_modules/three/build/three.module.js" } }</script>
+<script src="/node_modules/gsap/dist/gsap.min.js"></script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+
+const q = new URLSearchParams(location.search);
+const N = Number(q.get('n') || 12), TEX = Number(q.get('tex') || 512);
+const W = innerWidth, H = innerHeight;
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1);
+renderer.setSize(W, H);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(35, W / H, 0.1, 50);
+
+// Cards: 4:5 planes on a cylinder; more cards → bigger radius so they don't overlap.
+const R = Math.max(1.8, N * 0.95 / (2 * Math.PI) * 1.15);
+// Camera and fog follow the radius, so every variant shows the front of the ring the same way.
+camera.position.set(0, 0.4, R + 4.4);
+camera.lookAt(0, 0, 0);
+scene.fog = new THREE.Fog(0x1d1d1f, R + 2.2, R + 2.2 + 2 * R);
+const ring = new THREE.Group();
+scene.add(ring);
+const loader = new THREE.TextureLoader();
+for (let i = 0; i < N; i++) {
+  const tex = loader.load(`/spike/cards/${TEX}/${i % 12}.png`);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(0.8, 1.0), new THREE.MeshBasicMaterial({ map: tex, side: THREE.DoubleSide }));
+  const a = (i / N) * Math.PI * 2;
+  mesh.position.set(Math.sin(a) * R, 0, Math.cos(a) * R);
+  mesh.rotation.y = a;
+  ring.add(mesh);
+}
+
+const render = () => renderer.render(scene, camera);
+const state = { angle: 0 };
+const tl = gsap.timeline({ paused: true, onUpdate: () => { ring.rotation.y = state.angle * Math.PI / 180; render(); } });
+tl.to(state, { angle: 360 / N * 3, duration: Number(q.get('dur') || 4), ease: 'none' });
+
+// Wait for every image, then render once so all textures are uploaded before the first seek.
+await new Promise(r => { THREE.DefaultLoadingManager.onLoad = r; });
+render();
+const gl = renderer.getContext(), dbg = gl.getExtension('WEBGL_debug_renderer_info');
+window.__gl = dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER);
+window.__scene = { tl };
+</script>
+</body>
+</html>

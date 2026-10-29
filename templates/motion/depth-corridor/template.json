@@ -1,0 +1,102 @@
+{
+  "name": "depth-corridor",
+  "description": "Parallel planes seen at three-quarters; the camera trucks along them while the far planes frost.",
+  "reference": "Unveil",
+  "rig": {
+    "type": "stack",
+    "mode": "corridor",
+    "corridorGap": 0.95,
+    "sideAngle": -60,
+    "alternate": false
+  },
+  "ranges": {
+    "rig.corridorGap": [
+      0.6,
+      1.4
+    ],
+    "rig.sideAngle": [
+      -75,
+      -35
+    ]
+  },
+  "camera": {
+    "preset": "front",
+    "position": [
+      -1.9,
+      0.3,
+      1.9
+    ],
+    "target": [
+      0.25,
+      0,
+      -2.2
+    ],
+    "fov": 40
+  },
+  "look": {
+    "fog": 0.65,
+    "shading": 0.35
+  },
+  "type": {
+    "roles": [
+      "front"
+    ],
+    "maxWords": 5,
+    "specimen": {
+      "layer": "front",
+      "zone": "bottom",
+      "align": "left",
+      "size": 84,
+      "text": "Side caption"
+    }
+  },
+  "cards": {
+    "count": [
+      8,
+      14
+    ],
+    "aspect": [
+      "4:5",
+      "3:4"
+    ]
+  },
+  "beats": [
+    {
+      "name": "build-in",
+      "at": 0,
+      "dur": 0.14,
+      "to": "rig.build",
+      "from": 0,
+      "value": 1,
+      "ease": "motion:enter",
+      "skipOnLoop": true,
+      "why": "reveals the cards: they arrive in order before the motion takes over"
+    },
+    {
+      "name": "truck",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.travel",
+      "from": 0,
+      "value": "N*0.95",
+      "ease": "linear",
+      "why": "carries the viewer along the row, plane after plane"
+    }
+  ],
+  "duration": {
+    "default": 10,
+    "range": [
+      6,
+      16
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "a timeline or archive",
+    "case studies in a row",
+    "a calm, premium walk-through"
+  ],
+  "avoid": [
+    "square-on readable cards (they sit at an angle)"
+  ]
+}

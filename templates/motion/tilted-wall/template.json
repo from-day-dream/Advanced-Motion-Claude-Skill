@@ -1,0 +1,102 @@
+{
+  "name": "tilted-wall",
+  "description": "A large grid on a plane tilted about 40°, scrolling diagonally forever.",
+  "reference": "new",
+  "rig": {
+    "type": "wall",
+    "cols": 6,
+    "rows": "rows",
+    "gap": 0.14,
+    "tilt": -38,
+    "roll": -14
+  },
+  "ranges": {
+    "rig.tilt": [
+      -55,
+      -20
+    ],
+    "rig.roll": [
+      -25,
+      25
+    ],
+    "rows": [
+      8,
+      12
+    ]
+  },
+  "vars": {
+    "rows": 10
+  },
+  "camera": {
+    "preset": "front",
+    "fit": 0.42,
+    "fov": 35
+  },
+  "look": {
+    "fog": 0.45,
+    "shading": 0.2
+  },
+  "type": {
+    "roles": [
+      "front"
+    ],
+    "maxWords": 4,
+    "specimen": {
+      "layer": "front",
+      "zone": "center",
+      "size": "fit",
+      "maxSize": 170,
+      "plate": true,
+      "text": "Wall"
+    }
+  },
+  "cards": {
+    "count": [
+      20,
+      40
+    ],
+    "aspect": [
+      "4:5",
+      "1:1"
+    ]
+  },
+  "beats": [
+    {
+      "name": "build-in",
+      "at": 0,
+      "dur": 0.14,
+      "to": "rig.build",
+      "from": 0,
+      "value": 1,
+      "ease": "motion:enter",
+      "skipOnLoop": true,
+      "why": "reveals the cards: they arrive in order before the motion takes over"
+    },
+    {
+      "name": "scroll",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.scrollY",
+      "from": 0,
+      "value": "rows",
+      "ease": "linear",
+      "why": "keeps the wall moving: an endless body of work behind the line"
+    }
+  ],
+  "duration": {
+    "default": 14,
+    "range": [
+      8,
+      20
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "a big body of work behind one line",
+    "a catalogue",
+    "social proof"
+  ],
+  "avoid": [
+    "fewer than 20 cards (repeats show)"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "name": "poster-ring",
+  "description": "Bent posters on a cylinder around the camera, spinning constantly.",
+  "reference": "VK Fest lineup",
+  "rig": {
+    "type": "ring",
+    "mode": "cylinder",
+    "facing": "in",
+    "bend": 1,
+    "rows": 3,
+    "tilt": -4
+  },
+  "ranges": {
+    "turns": [
+      1,
+      2
+    ],
+    "rig.tilt": [
+      -12,
+      12
+    ],
+    "rig.rows": [
+      1,
+      4
+    ]
+  },
+  "vars": {
+    "turns": 1
+  },
+  "camera": {
+    "preset": "inside-axis",
+    "offsetR": [
+      0,
+      0,
+      0.55
+    ],
+    "fov": 62
+  },
+  "look": {
+    "fog": 0.45,
+    "shading": 0.35,
+    "backShade": 0.3
+  },
+  "type": {
+    "roles": [
+      "none",
+      "front"
+    ],
+    "maxWords": 4,
+    "specimen": null
+  },
+  "cards": {
+    "count": [
+      8,
+      16
+    ],
+    "aspect": [
+      "4:5",
+      "3:4",
+      "2:3"
+    ]
+  },
+  "beats": [
+    {
+      "name": "build-in",
+      "at": 0,
+      "dur": 0.14,
+      "to": "rig.build",
+      "from": 0,
+      "value": 1,
+      "ease": "motion:enter",
+      "skipOnLoop": true,
+      "why": "reveals the cards: they arrive in order before the motion takes over"
+    },
+    {
+      "name": "spin",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.angle",
+      "from": 0,
+      "value": "turns*360",
+      "ease": "linear",
+      "why": "carries the lineup past the viewer, poster after poster"
+    }
+  ],
+  "duration": {
+    "default": 12,
+    "range": [
+      8,
+      20
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "a lineup",
+    "a poster series",
+    "a product range",
+    "event speakers"
+  ],
+  "avoid": [
+    "fewer than 8 items (the ring shows its gaps)",
+    "dense text on cards"
+  ]
+}

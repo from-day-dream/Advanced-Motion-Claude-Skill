@@ -1,0 +1,44 @@
+{
+  "template": "deck-cycle",
+  "canvas": {
+    "duration": 10,
+    "loop": true
+  },
+  "cards": [
+    {
+      "id": "c01",
+      "src": "cards/carousel/01.png",
+      "html": "cards/carousel/01.html"
+    },
+    {
+      "id": "c02",
+      "src": "cards/carousel/02.png",
+      "html": "cards/carousel/02.html"
+    },
+    {
+      "id": "c03",
+      "src": "cards/carousel/03.png",
+      "html": "cards/carousel/03.html"
+    },
+    {
+      "id": "c04",
+      "src": "cards/carousel/04.png",
+      "html": "cards/carousel/04.html"
+    },
+    {
+      "id": "c05",
+      "src": "cards/carousel/05.png",
+      "html": "cards/carousel/05.html"
+    }
+  ],
+  "type": [
+    {
+      "id": "line",
+      "text": "Weekly review",
+      "layer": "front",
+      "zone": "top",
+      "size": 104,
+      "enter": "none"
+    }
+  ]
+}

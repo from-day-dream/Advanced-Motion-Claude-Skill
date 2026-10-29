@@ -1,0 +1,112 @@
+{
+  "name": "deck-cycle",
+  "description": "A cascaded deck; the front card swipes off and tucks in at the back.",
+  "reference": "Creator cards",
+  "rig": {
+    "type": "stack",
+    "mode": "cycle",
+    "gap": 0.14,
+    "stepX": 0.07,
+    "stepY": 0.1,
+    "shrink": 0.04,
+    "depth": 4,
+    "swipe": 1.9,
+    "swipeRot": 14,
+    "idle": 0.012
+  },
+  "ranges": {
+    "rig.swipe": [
+      1.2,
+      2.6
+    ],
+    "rig.depth": [
+      3,
+      6
+    ]
+  },
+  "camera": {
+    "preset": "front",
+    "fit": 0.95,
+    "fov": 35,
+    "elevate": 6
+  },
+  "look": {
+    "shadow": "soft",
+    "shadowStrength": 0.35,
+    "fog": 0.1,
+    "shading": 0.25
+  },
+  "type": {
+    "roles": [
+      "front"
+    ],
+    "maxWords": 5,
+    "specimen": {
+      "layer": "front",
+      "zone": "top",
+      "size": 96,
+      "text": "Meet the team"
+    }
+  },
+  "cards": {
+    "count": [
+      4,
+      6
+    ],
+    "aspect": [
+      "4:5",
+      "3:4",
+      "2:3"
+    ]
+  },
+  "beats": [
+    {
+      "name": "cycle",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.peel",
+      "from": 0,
+      "value": "N",
+      "steps": "N",
+      "fill": 0.5,
+      "ease": "motion:move",
+      "why": "hands the focus to the next card: the front one swipes away and tucks behind"
+    },
+    {
+      "name": "orbit-out",
+      "at": 0,
+      "dur": 0.5,
+      "to": "camera.orbit",
+      "from": 0,
+      "value": 5,
+      "ease": "motion:ambient",
+      "why": "keeps the frame alive: the deck turns slightly"
+    },
+    {
+      "name": "orbit-back",
+      "at": 0.5,
+      "dur": 0.5,
+      "to": "camera.orbit",
+      "from": 5,
+      "value": 0,
+      "ease": "motion:ambient",
+      "why": "keeps the frame alive: the deck turns slightly"
+    }
+  ],
+  "duration": {
+    "default": 8,
+    "range": [
+      5,
+      14
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "profiles or team cards",
+    "UI cards or features one at a time",
+    "options to compare"
+  ],
+  "avoid": [
+    "more than 6 cards (each gets too little time)"
+  ]
+}

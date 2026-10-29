@@ -1,0 +1,9 @@
+{
+  "name": "advanced-motion",
+  "displayName": "Advanced Motion",
+  "version": "0.1.0",
+  "description": "Turn cards (carousel slides, deck pages, posters, photos) into one continuous branded 3D scene with real depth, rendered locally to MP4 with your brand's fonts and motion.",
+  "author": { "name": "day-dream.studio" },
+  "license": "MIT",
+  "keywords": ["3d", "reels", "motion-graphics", "video", "three.js", "branding", "carousel"]
+}

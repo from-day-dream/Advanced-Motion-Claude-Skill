@@ -1,0 +1,104 @@
+{
+  "name": "cover-flow",
+  "description": "A row of cards, the centre one flat and the sides angled away; it steps from item to item with holds.",
+  "reference": "new",
+  "rig": {
+    "type": "arc",
+    "mode": "flow",
+    "sideAngle": 60,
+    "centerGap": 0.12,
+    "sideGap": 0.28,
+    "depthBack": 0.6,
+    "idle": 0.01
+  },
+  "ranges": {
+    "rig.sideAngle": [
+      40,
+      75
+    ]
+  },
+  "camera": {
+    "preset": "front",
+    "position": [
+      0,
+      0.15,
+      3.3
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ],
+    "fov": 35
+  },
+  "look": {
+    "fog": 0.3,
+    "shading": 0.35,
+    "shadow": "soft",
+    "shadowStrength": 0.2
+  },
+  "type": {
+    "roles": [
+      "front"
+    ],
+    "maxWords": 5,
+    "specimen": {
+      "layer": "front",
+      "zone": "bottom",
+      "size": 80,
+      "text": "Item by item"
+    }
+  },
+  "cards": {
+    "count": [
+      5,
+      9
+    ],
+    "aspect": [
+      "4:5",
+      "3:4",
+      "1:1"
+    ]
+  },
+  "beats": [
+    {
+      "name": "build-in",
+      "at": 0,
+      "dur": 0.14,
+      "to": "rig.build",
+      "from": 0,
+      "value": 1,
+      "ease": "motion:enter",
+      "skipOnLoop": true,
+      "why": "reveals the cards: they arrive in order before the motion takes over"
+    },
+    {
+      "name": "step",
+      "at": 0.08,
+      "dur": 0.92,
+      "to": "rig.focus",
+      "from": 0,
+      "value": "N-1",
+      "steps": "N-1",
+      "fill": 0.4,
+      "ease": "motion:move",
+      "why": "steps the focus from item to item, holding each long enough to read"
+    }
+  ],
+  "duration": {
+    "default": 10,
+    "range": [
+      6,
+      16
+    ]
+  },
+  "loop": false,
+  "fits": [
+    "pages that must be read one at a time",
+    "a ranked list",
+    "product options"
+  ],
+  "avoid": [
+    "a seamless loop (set rig.loop true and step to N instead)"
+  ]
+}

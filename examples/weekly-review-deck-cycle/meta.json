@@ -1,0 +1,219 @@
+{
+  "brand": "demo",
+  "ratio": "9:16",
+  "duration": 10,
+  "createdAt": "2026-10-29T10:53:33.855Z",
+  "topic": "A weekly review in 15 minutes",
+  "title": "Weekly review: the deck cycles",
+  "framework": "Step-by-step",
+  "source": {
+    "type": "carousel",
+    "carousel": "output/2026-10-26-weekly-review-15-minutes",
+    "slides": 5
+  },
+  "positioning": "Quiet Desk's promise of calm, concrete habits applied to the end of the week: a small ritual instead of a productivity system.",
+  "context": {
+    "audience": "Solo founders and freelancers who end most weeks unsure what mattered",
+    "promise": "End Friday knowing exactly what Monday needs, in 15 minutes",
+    "arc": "Promise → capture → reflect → decide → follow"
+  },
+  "caption": "Most weeks don't end. They just stop.\n\nA 15-minute review on Friday fixes that:\n1. Empty every inbox into one list\n2. Ask three questions about the week\n3. Pick Monday's one task and write it on paper\n\nSave this for Friday afternoon.\n\nFollow @quietdesk.demo for one calm work habit, every Tuesday.",
+  "hashtags": [
+    "#weeklyreview",
+    "#deepwork",
+    "#focus",
+    "#productivityhabits",
+    "#solofounder",
+    "#freelancelife",
+    "#calmwork",
+    "#planning",
+    "#workhabits",
+    "#timemanagement"
+  ],
+  "cards": [
+    {
+      "id": "c01",
+      "src": "cards/carousel/01.png",
+      "html": "cards/carousel/01.html",
+      "aspect": "4:5",
+      "px": [
+        1080,
+        1350
+      ],
+      "from": "slide 1"
+    },
+    {
+      "id": "c02",
+      "src": "cards/carousel/02.png",
+      "html": "cards/carousel/02.html",
+      "aspect": "4:5",
+      "px": [
+        1080,
+        1350
+      ],
+      "from": "slide 2"
+    },
+    {
+      "id": "c03",
+      "src": "cards/carousel/03.png",
+      "html": "cards/carousel/03.html",
+      "aspect": "4:5",
+      "px": [
+        1080,
+        1350
+      ],
+      "from": "slide 3"
+    },
+    {
+      "id": "c04",
+      "src": "cards/carousel/04.png",
+      "html": "cards/carousel/04.html",
+      "aspect": "4:5",
+      "px": [
+        1080,
+        1350
+      ],
+      "from": "slide 4"
+    },
+    {
+      "id": "c05",
+      "src": "cards/carousel/05.png",
+      "html": "cards/carousel/05.html",
+      "aspect": "4:5",
+      "px": [
+        1080,
+        1350
+      ],
+      "from": "slide 5"
+    }
+  ],
+  "content": [
+    {
+      "slide": 1,
+      "card": "c01",
+      "role": "hook",
+      "idea": "A weekly review can take 15 minutes and fix Monday",
+      "headline": "Your weekly review, in 15 minutes",
+      "key": "Three short steps to end Friday knowing exactly what Monday needs.",
+      "support": "",
+      "items": [],
+      "words": 17
+    },
+    {
+      "slide": 2,
+      "card": "c02",
+      "role": "body",
+      "idea": "Capture before acting",
+      "headline": "Empty every inbox",
+      "key": "Email, tabs, notes, sticky notes. Move it all into one list.",
+      "support": "The rule: capture now, act on nothing yet.",
+      "items": [],
+      "words": 22
+    },
+    {
+      "slide": 3,
+      "card": "c03",
+      "role": "body",
+      "idea": "Reflect with three fixed questions",
+      "headline": "Look back first",
+      "key": "Three questions. Last week becomes lessons.",
+      "support": "",
+      "items": [
+        "What actually moved forward?",
+        "What got stuck, and why?",
+        "What can I drop?"
+      ],
+      "words": 22
+    },
+    {
+      "slide": 4,
+      "card": "c04",
+      "role": "body",
+      "idea": "Decide Monday's single priority on Friday",
+      "headline": "Pick Monday's one task",
+      "key": "Write it on paper and leave it on your keyboard.",
+      "support": "Monday starts with the decision already made.",
+      "items": [],
+      "words": 21
+    },
+    {
+      "slide": 5,
+      "card": "c05",
+      "role": "cta",
+      "idea": "Follow",
+      "headline": "Follow for calmer weeks",
+      "key": "@quietdesk.demo",
+      "support": "One calm work habit, every Tuesday.",
+      "items": [],
+      "words": 11
+    }
+  ],
+  "plan": {
+    "template": "deck-cycle",
+    "why": "5 cards to give the spotlight one at a time, as a loop for a story or a profile header",
+    "line": "Weekly review",
+    "move": [
+      "rig.peel in 5 steps: hands the focus to the next card, the front one tucks behind",
+      "camera orbit sway keeps the deck turning slightly"
+    ],
+    "seconds": 10,
+    "loop": true,
+    "cards": [
+      "c01",
+      "c02",
+      "c03",
+      "c04",
+      "c05"
+    ],
+    "reference": null
+  },
+  "analysis": {
+    "summary": "A 5-slide carousel: a 15-minute Friday weekly review in 3 steps (empty every inbox, look back first, pick Monday's one task).",
+    "goal": "show the routine as one short motion piece",
+    "audience": "knowledge workers who follow @quietdesk.demo",
+    "angle": "Weekly review",
+    "items": "5 cards: carousel pages",
+    "keyPoints": [
+      "15 minutes",
+      "3 steps",
+      "every Friday"
+    ],
+    "facts": [
+      {
+        "fact": "15 minutes, 3 steps",
+        "source": "carousel slide 1"
+      }
+    ],
+    "assets": [],
+    "conflicts": [],
+    "gaps": []
+  },
+  "loop": true,
+  "motion": {
+    "ease": {
+      "enter": "cubic-bezier(0.16,1,0.3,1)",
+      "exit": "power2.in",
+      "move": "logistic(7)",
+      "fade": "sine.inOut",
+      "ambient": "sine.inOut",
+      "cutOut": "logistic(7).in",
+      "cutIn": "logistic(7).out"
+    },
+    "duration": {
+      "enter": 0.8,
+      "exit": 0.5,
+      "move": 1.1,
+      "cut": 0.5,
+      "stagger": 0.07
+    },
+    "distance": 110,
+    "readingSpeed": 3.5,
+    "visual": {
+      "wordsPerBeat": 6,
+      "headline": "optional",
+      "requires": null,
+      "maxVisuals": 3
+    },
+    "notes": "Calm, measured: settles slowly, never bounces. (Scratch test brand for Advanced Motion examples.)"
+  }
+}

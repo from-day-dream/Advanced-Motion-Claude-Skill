@@ -1,0 +1,8 @@
+{
+  "// specimen": "Neutral motion for template specimens only: plain, mid-paced curves so a specimen shows the template's structure and choreography, not a style.",
+  "ease": { "enter": "power2.out", "exit": "power2.in", "move": "power2.inOut", "fade": "sine.inOut", "ambient": "sine.inOut", "cutOut": "logistic(8).in", "cutIn": "logistic(8).out" },
+  "duration": { "enter": 0.6, "exit": 0.5, "move": 1.0, "cut": 0.5, "stagger": 0.06 },
+  "distance": 120,
+  "readingSpeed": 3.5,
+  "visual": { "wordsPerBeat": 6, "headline": "optional", "requires": null, "maxVisuals": 3 }
+}

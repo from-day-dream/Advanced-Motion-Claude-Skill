@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+{{FONT_FACES}}
+{{TOKENS}}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--brand-ink);color:var(--brand-paper)}
+.top{position:absolute;top:96px;left:96px;right:96px;display:flex;justify-content:space-between;
+  font-family:var(--brand-font-body);font-size:var(--brand-size-meta);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-grid)}
+.main{position:absolute;left:96px;right:96px;top:324px}
+.kicker{font-family:var(--brand-font-body);font-weight:600;font-size:var(--brand-size-meta);letter-spacing:.14em;text-transform:uppercase;color:var(--brand-accent-on-ink);margin:0 0 32px}
+h2{margin:0;text-wrap:balance;font-family:var(--brand-font-heading);font-weight:600;font-size:var(--brand-size-headline);line-height:1.04;letter-spacing:-.02em}
+h2 em{font-style:italic;color:var(--brand-accent-on-ink)}
+.key{text-wrap:pretty;margin:48px 0 0;max-width:800px;font-family:var(--brand-font-body);font-size:var(--brand-size-key);line-height:1.3}
+ol{list-style:none;margin:72px 0 0;padding:0;counter-reset:q}
+li{display:flex;gap:28px;align-items:baseline;padding:22px 0;border-top:1px solid var(--brand-muted);font-family:var(--brand-font-body);font-weight:600;font-size:var(--brand-size-item);counter-increment:q}
+li::before{content:counter(q);font-family:var(--brand-font-heading);font-style:italic;color:var(--brand-accent-on-ink);min-width:28px}
+.teaser{position:absolute;left:96px;bottom:96px;font-family:var(--brand-font-body);font-size:var(--brand-size-meta);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-grid)}
+</style></head>
+<body>
+<div class="slide" data-slide="3">
+  <div class="top"><span data-text="meta">@quietdesk.demo</span><span data-text="meta">03 / 05</span></div>
+  <div class="main">
+    <p class="kicker" data-text="meta">Step 2 · 5 min</p>
+    <h2 data-text="headline">Look <em>back</em> first</h2>
+    <p class="key" data-text="key">Three questions. Last week becomes lessons.</p>
+    <ol>
+      <li data-text="item">What actually moved forward?</li>
+      <li data-text="item">What got stuck, and why?</li>
+      <li data-text="item">What can I drop?</li>
+    </ol>
+  </div>
+  <div class="teaser" data-text="meta">Last step: aim →</div>
+</div>
+</body></html>

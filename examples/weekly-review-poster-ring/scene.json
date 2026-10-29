@@ -1,0 +1,70 @@
+{
+  "template": "poster-ring",
+  "canvas": {
+    "duration": 12,
+    "loop": true
+  },
+  "cards": [
+    {
+      "id": "c01",
+      "src": "cards/carousel/01.png",
+      "html": "cards/carousel/01.html"
+    },
+    {
+      "id": "c02",
+      "src": "cards/carousel/02.png",
+      "html": "cards/carousel/02.html"
+    },
+    {
+      "id": "c03",
+      "src": "cards/carousel/03.png",
+      "html": "cards/carousel/03.html"
+    },
+    {
+      "id": "c04",
+      "src": "cards/carousel/04.png",
+      "html": "cards/carousel/04.html"
+    },
+    {
+      "id": "c05",
+      "src": "cards/carousel/05.png",
+      "html": "cards/carousel/05.html"
+    },
+    {
+      "id": "p1",
+      "src": "cards/posters/p1.html",
+      "px": [
+        1080,
+        1350
+      ]
+    },
+    {
+      "id": "p2",
+      "src": "cards/posters/p2.html",
+      "px": [
+        1080,
+        1350
+      ]
+    },
+    {
+      "id": "p3",
+      "src": "cards/posters/p3.html",
+      "px": [
+        1080,
+        1350
+      ]
+    },
+    {
+      "id": "p4",
+      "src": "cards/posters/p4.html",
+      "px": [
+        1080,
+        1350
+      ]
+    }
+  ],
+  "rig": {
+    "rows": 3
+  },
+  "type": []
+}

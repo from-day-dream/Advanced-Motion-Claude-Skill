@@ -1,0 +1,92 @@
+{
+  "name": "card-tunnel",
+  "description": "Cards line a tube; the camera flies forward through it toward the word.",
+  "reference": "new",
+  "rig": {
+    "type": "ring",
+    "mode": "tunnel",
+    "perRing": 8,
+    "rings": "rings",
+    "spacing": "spacing",
+    "bend": 1
+  },
+  "ranges": {
+    "rings": [
+      6,
+      10
+    ],
+    "spacing": [
+      1.1,
+      2
+    ]
+  },
+  "vars": {
+    "rings": 7,
+    "spacing": 1.4
+  },
+  "camera": {
+    "preset": "inside-axis",
+    "position": [
+      0,
+      0,
+      0.6
+    ],
+    "fov": 64
+  },
+  "look": {
+    "fog": 0.75,
+    "shading": 0.3
+  },
+  "type": {
+    "roles": [
+      "front"
+    ],
+    "maxWords": 3,
+    "specimen": {
+      "layer": "front",
+      "zone": "center",
+      "size": "fit",
+      "maxSize": 170,
+      "text": "Tunnel"
+    }
+  },
+  "cards": {
+    "count": [
+      20,
+      56
+    ],
+    "aspect": [
+      "4:5",
+      "1:1"
+    ]
+  },
+  "beats": [
+    {
+      "name": "fly",
+      "at": 0,
+      "dur": 1,
+      "to": "rig.travel",
+      "from": 0,
+      "value": "rings*spacing",
+      "ease": "linear",
+      "why": "carries the viewer forward through the work toward the message"
+    }
+  ],
+  "duration": {
+    "default": 10,
+    "range": [
+      6,
+      16
+    ]
+  },
+  "loop": true,
+  "fits": [
+    "an immersive intro",
+    "a big archive",
+    "a destination word"
+  ],
+  "avoid": [
+    "few cards (rings repeat)",
+    "readable cards"
+  ]
+}
